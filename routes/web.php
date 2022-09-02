@@ -20,4 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('admin', 'Admin\HomeController@index');
+// Route::get('admin', 'Admin\HomeController@index')->middleware('auth')->name('admin.home');
+// Route::get('admin/about', 'Admin\HomeController@about')->middleware('auth')->name('admin.about');
+Route::middleware('auth')
+->namesapce('Admin')
+->name('admin.')
+-prefix('admin')
+->group(function() {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('about', 'HomeController@about')->name('about');
+});
