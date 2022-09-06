@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.home');
 });
 
 Auth::routes();
@@ -23,9 +23,9 @@ Auth::routes();
 // Route::get('admin', 'Admin\HomeController@index')->middleware('auth')->name('admin.home');
 // Route::get('admin/about', 'Admin\HomeController@about')->middleware('auth')->name('admin.about');
 Route::middleware('auth')
-->namesapce('Admin')
+->namespace('Admin')
 ->name('admin.')
--prefix('admin')
+->prefix('admin')
 ->group(function() {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('about', 'HomeController@about')->name('about');
