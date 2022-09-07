@@ -13,13 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.home');
-});
-
 Auth::routes();
-
-
 // Route::get('admin', 'Admin\HomeController@index')->middleware('auth')->name('admin.home');
 // Route::get('admin/about', 'Admin\HomeController@about')->middleware('auth')->name('admin.about');
 Route::middleware('auth')
@@ -29,4 +23,8 @@ Route::middleware('auth')
 ->group(function() {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('about', 'HomeController@about')->name('about');
+});
+
+Route::get('{any?}', function () {
+    return view('guest.home');
 });
