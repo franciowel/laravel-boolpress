@@ -14,6 +14,9 @@
         Slug : {{ $post->slug }}
     </div>
 
+    <h3 class="mt-3">
+        Testo:
+    </h3>
     <p>
         {{ $post->content }}
     </p>
