@@ -5,8 +5,9 @@
         Crea nuovo post
     </h2>
 
-    <form action="">
+    <form action="{{ route('admin.posts.store')}}" method="post">
         @csrf
+        @method('POST')
 
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
