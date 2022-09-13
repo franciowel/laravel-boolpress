@@ -3,14 +3,22 @@
 @section('content')
     <h1>{{$post->title}}</h1>
     <div>
-        Creato il : {{ $post->created_at }}
+        Creato il : {{ $post->created_at->format('l, d F Y') }}
     </div>
 
-    <div>
-        Aggiornato il : {{ $post->updated_at }}
+    <div class="mt-1">
+        Aggiornato il : {{ $post->updated_at->format('l, d F Y') }}
     </div>
 
-    <div>
+    @if ($created_days_ago > 0)
+        <div class="mt-1">
+            creato {{ $created_days_ago }} giorn{{ $created_days_ago > 1 ? 'i' : 'o' }} fa
+        </div>
+        @else
+        <div>creato oggi</div>
+    @endif
+
+    <div class="mt-1">
         Slug : {{ $post->slug }}
     </div>
 
