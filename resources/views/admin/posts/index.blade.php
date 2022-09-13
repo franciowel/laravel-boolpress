@@ -4,6 +4,15 @@
     <h1>
         Lista Post
     </h1>
+
+    @if ($show_deleted_message === 'yes')
+
+        <div class="alert alert-primary" role="alert">
+            Articolo cancellato con successo.
+        </div>
+        
+    @endif
+    
     <div class="row row-cols-3">
 
         @foreach ($posts as $post)
