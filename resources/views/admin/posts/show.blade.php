@@ -22,6 +22,10 @@
         Slug : {{ $post->slug }}
     </div>
 
+    <div class="mt-1">
+        Categoria : {{ $post->category ? $post->category->name : 'nessuna' }}
+    </div>
+
     <h3 class="mt-3">
         Testo:
     </h3>

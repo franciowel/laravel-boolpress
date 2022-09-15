@@ -25,6 +25,15 @@
         </div>
 
         <div class="mb-3">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
             <label for="content" class="form-label">Testo</label>
             <textarea class="form-control" id="content" placeholder="Scrvi il testo..." name="content" rows="5">{{ old('content') }}</textarea>
         </div>
