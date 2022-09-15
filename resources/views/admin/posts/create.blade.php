@@ -25,11 +25,12 @@
         </div>
 
         <div class="mb-3">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <label for="category_id">Categoria:</label>
+            <select class="form-select form-select-sm" id="category_id" name="category_id">
+                <option value="">Nessuna</option>
+                @foreach ($categories as $category)
+                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : ''}}>{{ $category->name }}</option>
+                @endforeach
               </select>
         </div>
 
